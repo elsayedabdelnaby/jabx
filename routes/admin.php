@@ -15,5 +15,7 @@ Route::group([
         Route::resource('users', 'AdminUserController')->name('', 'users');
         Route::post('users/{user}/changepassword', 'AdminUserController@changePassword')->name('users.changepassword');
         Route::resource('/roles', 'RoleController')->name('', 'roles');
+        Route::get('/sitesettings/{id}', 'SiteSettingsController@edit')->name('sitesettings.edit');
+        Route::put('/sitesettings/{id}', 'SiteSettingsController@update')->name('sitesettings.update');
     });
 });

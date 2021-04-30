@@ -17,7 +17,7 @@ class SiteSettingsSeeder extends Seeder
         $site_settings->logo = 'logo.png';
         $site_settings->favicon = 'favicon.png';
         $site_settings->meta_title = 'Jabx';
-        $site_settings->meta_keyword = 'Jabx';
+        $site_settings->meta_keywords = 'Jabx';
         $site_settings->meta_description = 'Jabx';
         $site_settings->save();
     }

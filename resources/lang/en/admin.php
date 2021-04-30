@@ -41,5 +41,10 @@ return [
     'cancel' => 'Cancel',
     'select' => 'Select',
     'save' => 'Save',
+    'site_settings' => 'Site Settings',
+    'title' => 'Title',
+    'meta_title' => 'Meta Title',
+    'meta_keywords' => 'Meta Keywords',
+    'meta_description' => 'Meta Description',
 
 ];

@@ -185,6 +185,12 @@
                                     <span class="menu-text">@lang( 'admin.roles' )</span>
                                 </a>
                             </li>
+                            <li class="menu-item " aria-haspopup="true">
+                                <a href="{{ route('admin.sitesettings.edit', 1) }}" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                    <span class="menu-text">@lang( 'admin.site_settings' )</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>
