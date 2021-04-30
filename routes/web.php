@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\FrontEndPages;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', FrontEndPages::class]
+], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+});
+
 
 
 /**
