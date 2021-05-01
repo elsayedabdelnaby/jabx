@@ -151,3 +151,10 @@
     <!--end::Card-->
 @endsection
 
+
+
+@section('script')
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="{{ asset('assets/admin/js/pages/custom/sponsors/edit-sponsors.js') }} "></script>
+    <!--end::Page Scripts-->
+@endsection
