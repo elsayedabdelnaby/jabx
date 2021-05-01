@@ -98,7 +98,12 @@ class SponsorController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.sponsors.edit');
+        $sponsor = Sponsor::findOrFail($id);
+
+        return view('admin.sponsors.edit', [
+            'sponsor' => $sponsor,
+            'module' => 'sponsors',
+        ]);
     }
 
     /**
@@ -110,7 +115,24 @@ class SponsorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $sponsor = Sponsor::findOrFail($id);
+        $sponsor->name = $sponsor->name;
+        $logo_name = $sponsor->logo;
+
+        $logo_file = $this->verifyAndUpload($request, 'logo', $this->image_path, $logo_name);
+
+        if (!is_null($logo_file)) {
+            $logo_name = $logo_file;
+        }
+
+        $sponsor->logo = $logo_name;
+
+        $sponsor->save();
+
+        return redirect()
+            ->route('admin.sponsors.edit', $sponsor)
+            ->with('status', true)
+            ->with('message', 'Sponsor Updated Successfully');
     }
 
     /**

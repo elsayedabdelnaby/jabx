@@ -118,7 +118,7 @@
 
         <!--begin::Card body-->
         <div class="card-body px-0">
-            <form class="form" method="POST" action="{{ route('admin.sponsors.edit', $sponsor) }}" id="sponsor_edit_form"
+            <form class="form" method="POST" action="{{ route('admin.sponsors.update', $sponsor) }}" id="sponsor_edit_form"
                 enctype="multipart/form-data">
                 @csrf
                 @method('put')
