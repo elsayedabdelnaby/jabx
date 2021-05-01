@@ -11,7 +11,7 @@
 
 @section('content')
     <!-- Hero
-          ================================================== -->
+                          ================================================== -->
     <div class="section over-hide">
         <div class="section over-hide padding-top-120 pb-5 bg-dark-blue section-background-niche-18">
             <div class="section-1400 pt-xl-4">
@@ -99,7 +99,7 @@
 
     </div>
     <!-- Services section
-          ================================================== -->
+                          ================================================== -->
     <div class="section over-hide padding-bottom-120 bg-light-2 section-background-13">
         <div class="section-1400">
             <div class="container-fluid">
@@ -171,7 +171,7 @@
     </div>
 
     <!-- Logos section
-      ================================================== -->
+                      ================================================== -->
     <div class="section over-hide padding-top-bottom bg-black">
         <div class="section-1400">
             <div class="container-fluid">
@@ -180,94 +180,50 @@
                         <div class="section swiper-logos swiper-container-initialized swiper-container-horizontal">
                             <div class="swiper-wrapper"
                                 style="transform: translate3d(-3182.5px, 0px, 0px); transition-duration: 0ms;">
-                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3"
-                                    style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-11.svg" alt="">
+                                @foreach ($sponsors as $sponsor)
+                                    <div class="swiper-slide" data-swiper-slide-index="{{ asset($sponsor->id) }}"
+                                        style="width: 318.25px;">
+                                        <div class="section logos-wrap-1 text-center margin-auto">
+                                            <img src="{{ asset($sponsor->logo_path) }}" alt="">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4"
-                                    style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-12.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
-                                    data-swiper-slide-index="5" style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-13.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
-                                    data-swiper-slide-index="6" style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-14.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="0"
-                                    style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-8.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" data-swiper-slide-index="1" style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-9.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" data-swiper-slide-index="2" style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-10.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" data-swiper-slide-index="3" style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-11.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" data-swiper-slide-index="4" style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-12.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="5"
-                                    style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-13.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="6"
-                                    style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-14.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-next"
-                                    data-swiper-slide-index="0" style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-8.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1"
-                                    style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-9.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2"
-                                    style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-10.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3"
-                                    style="width: 318.25px;">
-                                    <div class="section logos-wrap-1 text-center margin-auto">
-                                        <img src="img/logo-11.svg" alt="">
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Subscribe section
+       ================================================== -->
+    <div class="section padding-bottom-120 bg-light-2 section-background-niche-20">
+        <div class="section-1400">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10 col-md-8 col-lg-7 col-xl-6">
+                        <div
+                            class="section bg-white border-4 section-shadow-blue section-background-24 p-3 p-sm-4 p-xl-5 text-center">
+                            <h5 class="mb-1">
+                                Join our awesome family
+                            </h5>
+                            <p class="mb-4">
+                                We won´t spam you, never.
+                            </p>
+                            <div class="form-group">
+                                <input type="email" name="contactemail" class="form-style big form-style-with-icon"
+                                    placeholder="Your Email" id="contactemail" autocomplete="off">
+                                <i class="input-icon big uil uil-at"></i>
+                            </div>
+                            <button class="btn btn-dark-primary mt-3">
+                                Subscribe
+                            </button>
+                            <div class="w-100 pb-4"></div>
+                            <a href="" class="link link-dark-primary mx-2" data-hover="Instagram">Instagram</a>
+                            <a href="" class="link link-dark-primary mx-2" data-hover="Twitter">Twitter</a>
+                            <a href="" class="link link-dark-primary mx-2" data-hover="LinkedIn">LinkedIn</a>
                         </div>
                     </div>
                 </div>

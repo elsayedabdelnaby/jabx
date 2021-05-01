@@ -46,5 +46,8 @@ return [
     'meta_title' => 'Meta Title',
     'meta_keywords' => 'Meta Keywords',
     'meta_description' => 'Meta Description',
+    'sponsors' => 'Sponsors',
+    'sponsor' => 'Sponsor',
+    'sponsors_management' => 'Sponsors Management',
 
 ];

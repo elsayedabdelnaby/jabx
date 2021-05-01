@@ -43,6 +43,7 @@
 
         @yield('content')
         
+        @include('front.partials.footer')
     </div>
 
     <!-- JAVASCRIPT

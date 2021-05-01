@@ -4,7 +4,6 @@
 var KTDatatableDataLocalDemo = function () {
 
     // demo initializer
-    console.log(dataJSONArray);
     var demo = function () {
 
         var datatable = $('#kt_datatable').KTDatatable({
@@ -58,7 +57,7 @@ var KTDatatableDataLocalDemo = function () {
 	                                </svg>\
 	                            </span>\
 							</a>\
-							<a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">\
+							<a href="javascript:;" id="' + row.id + '" onclick="deleteSponsor(' + row.id + ')" class="btn btn-sm btn-clean btn-icon" title="Delete">\
 	                            <span class="svg-icon svg-icon-md">\
 	                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
 	                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
@@ -88,3 +87,28 @@ var KTDatatableDataLocalDemo = function () {
 jQuery(document).ready(function () {
     KTDatatableDataLocalDemo.init();
 });
+
+function deleteSponsor(id) {
+    var host = window.location.protocol + "//" + window.location.host;
+    $.ajax({
+        type: "DELETE",
+        url: host + "/admin/sponsors/" + id,
+        data: {
+            _method: 'DELETE',
+            "id": id
+        },
+        success: function (response) {
+            swal.fire({
+                text: "Sponsor deleted successfully",
+                icon: "success",
+                buttonsStyling: false,
+                confirmButtonText: "Ok, got it!",
+                customClass: {
+                    confirmButton: "btn font-weight-bold btn-light-primary"
+                }
+            }).then(function () {
+                $('#'+ id).closest('tr').hide();
+            });
+        }
+    });
+}

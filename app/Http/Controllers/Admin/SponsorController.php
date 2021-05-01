@@ -8,6 +8,7 @@ use App\Models\Sponsor;
 use App\Repositories\SponsorRepositoryInterface;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
+use File;
 
 class SponsorController extends Controller
 {
@@ -143,6 +144,9 @@ class SponsorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sponsor = Sponsor::findOrFail($id);
+        File::delete($this->image_path . $sponsor->logo);
+        $sponsor->delete();
+        return true;
     }
 }

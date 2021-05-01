@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\SponsorRepositoryInterface;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+    private $sponsorRepository;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(SponsorRepositoryInterface $sponsorRepository)
     {
-        
+        $this->sponsorRepository = $sponsorRepository;
     }
 
     /**
@@ -23,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $sponsors = $this->sponsorRepository->all();
+        
+        return view('home', [
+            'sponsors' => $sponsors
+        ]);
     }
 }
