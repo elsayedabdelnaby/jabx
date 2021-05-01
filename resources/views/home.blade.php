@@ -11,7 +11,7 @@
 
 @section('content')
     <!-- Hero
-      ================================================== -->
+          ================================================== -->
     <div class="section over-hide">
         <div class="section over-hide padding-top-120 pb-5 bg-dark-blue section-background-niche-18">
             <div class="section-1400 pt-xl-4">
@@ -99,7 +99,7 @@
 
     </div>
     <!-- Services section
-      ================================================== -->
+          ================================================== -->
     <div class="section over-hide padding-bottom-120 bg-light-2 section-background-13">
         <div class="section-1400">
             <div class="container-fluid">
@@ -120,49 +120,154 @@
                             <div class="row justify-content-center">
                                 <div class="col-sm-6 col-lg-4 mt-0 mt-lg-4 mt-xl-5">
                                     <p>
-                                        <div class="section border-4 services-wrap-3 no-back-img p-4"
-                                            data-scroll-reveal="enter bottom move 40px over 0.5s after 0.3s"
-                                            data-scroll-reveal-id="1" data-scroll-reveal-initialized="true"
-                                            data-scroll-reveal-complete="true">
-                                            <h6 class="mb-3 mb-lg-5">
-                                                Startups<br>app
-                                            </h6>
-                                            <p class="mb-0 text-right"><i class="uil uil-ninja size-40"></i></p>
-                                        </div>
+                                    <div class="section border-4 services-wrap-3 no-back-img p-4"
+                                        data-scroll-reveal="enter bottom move 40px over 0.5s after 0.3s"
+                                        data-scroll-reveal-id="1" data-scroll-reveal-initialized="true"
+                                        data-scroll-reveal-complete="true">
+                                        <h6 class="mb-3 mb-lg-5">
+                                            Startups<br>app
+                                        </h6>
+                                        <p class="mb-0 text-right"><i class="uil uil-ninja size-40"></i></p>
+                                    </div>
                                     </p>
                                 </div>
                                 <div class="col-sm-6 col-lg-4 mt-4 mt-sm-0">
                                     <p>
-                                        <div class="section border-4 services-wrap-3 p-4"
-                                            data-scroll-reveal="enter bottom move 40px over 0.5s after 0.3s"
-                                            data-scroll-reveal-id="3" data-scroll-reveal-initialized="true"
-                                            data-scroll-reveal-complete="true">
-                                            <h6 class="mb-3 mb-lg-5 pb-lg-2">
-                                                Games<br>app
-                                            </h6>
-                                            <p class="mb-0 text-right"><i class="uil uil-game size-40"></i></p>
-                                        </div>
+                                    <div class="section border-4 services-wrap-3 p-4"
+                                        data-scroll-reveal="enter bottom move 40px over 0.5s after 0.3s"
+                                        data-scroll-reveal-id="3" data-scroll-reveal-initialized="true"
+                                        data-scroll-reveal-complete="true">
+                                        <h6 class="mb-3 mb-lg-5 pb-lg-2">
+                                            Games<br>app
+                                        </h6>
+                                        <p class="mb-0 text-right"><i class="uil uil-game size-40"></i></p>
+                                    </div>
                                     </p>
                                 </div>
                                 <div class="col-lg-4 mt-0 mt-lg-4 mt-xl-5">
                                     <div class="row justify-content-lg-start">
                                         <div class="col-sm-6 col-lg-12 mt-4 mt-lg-0">
                                             <p>
-                                                <div class="section border-4 services-wrap-3 p-4"
-                                                    data-scroll-reveal="enter bottom move 40px over 0.5s after 0.3s"
-                                                    data-scroll-reveal-id="5" data-scroll-reveal-initialized="true"
-                                                    data-scroll-reveal-complete="true">
-                                                    <h6 class="mb-3 mb-lg-5">
-                                                        eCommerce<br>ready
-                                                    </h6>
-                                                    <p class="mb-0 text-right"><i
-                                                            class="uil uil-shopping-basket size-40"></i></p>
-                                                </div>
+                                            <div class="section border-4 services-wrap-3 p-4"
+                                                data-scroll-reveal="enter bottom move 40px over 0.5s after 0.3s"
+                                                data-scroll-reveal-id="5" data-scroll-reveal-initialized="true"
+                                                data-scroll-reveal-complete="true">
+                                                <h6 class="mb-3 mb-lg-5">
+                                                    eCommerce<br>ready
+                                                </h6>
+                                                <p class="mb-0 text-right"><i class="uil uil-shopping-basket size-40"></i>
+                                                </p>
+                                            </div>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logos section
+      ================================================== -->
+    <div class="section over-hide padding-top-bottom bg-black">
+        <div class="section-1400">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 over-hide">
+                        <div class="section swiper-logos swiper-container-initialized swiper-container-horizontal">
+                            <div class="swiper-wrapper"
+                                style="transform: translate3d(-3182.5px, 0px, 0px); transition-duration: 0ms;">
+                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3"
+                                    style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-11.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4"
+                                    style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-12.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                                    data-swiper-slide-index="5" style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-13.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                                    data-swiper-slide-index="6" style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-14.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="0"
+                                    style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-8.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-swiper-slide-index="1" style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-9.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-swiper-slide-index="2" style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-10.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-swiper-slide-index="3" style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-11.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-swiper-slide-index="4" style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-12.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="5"
+                                    style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-13.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="6"
+                                    style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-14.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-next"
+                                    data-swiper-slide-index="0" style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-8.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1"
+                                    style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-9.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2"
+                                    style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-10.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3"
+                                    style="width: 318.25px;">
+                                    <div class="section logos-wrap-1 text-center margin-auto">
+                                        <img src="img/logo-11.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                         </div>
                     </div>
                 </div>
