@@ -49,5 +49,9 @@ return [
     'sponsors' => 'Sponsors',
     'sponsor' => 'Sponsor',
     'sponsors_management' => 'Sponsors Management',
+    'sliders' => 'Sliders',
+    'slider' => 'Slider',
+    'sliders_management' => 'Sliders Management',
+
 
 ];

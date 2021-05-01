@@ -60,7 +60,7 @@
             </div>
             <div class="row text-center text-md-left">
                 <div class="col-md order-md-first">
-                    <p class="mb-0 size-14 color-gray-dark mt-1 font-weight-500">© Jabx. All Rights Reserved.
+                    <p class="mb-0 size-14 color-gray-dark mt-1 font-weight-500">© {{ $site_settings->title }}. All Rights Reserved.
                     </p>
                 </div>
             </div>

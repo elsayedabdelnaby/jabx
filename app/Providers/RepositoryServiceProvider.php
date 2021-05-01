@@ -5,8 +5,10 @@ namespace App\Providers;
 use App\Repositories\AdminUserRepositoryInterface;
 use App\Repositories\Eloquent\AdminUserRepository;
 use App\Repositories\Eloquent\BaseRepository;
+use App\Repositories\Eloquent\SliderRepository;
 use App\Repositories\Eloquent\SponsorRepository;
 use App\Repositories\EloquentRepositoryInterface;
+use App\Repositories\SliderRepositoryInterface;
 use App\Repositories\SponsorRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
@@ -32,5 +34,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(EloquentRepositoryInterface::class, BaseRepository::class);
         $this->app->bind(AdminUserRepositoryInterface::class, AdminUserRepository::class);
         $this->app->bind(SponsorRepositoryInterface::class, SponsorRepository::class);
+        $this->app->bind(SliderRepositoryInterface::class, SliderRepository::class);
     }
 }

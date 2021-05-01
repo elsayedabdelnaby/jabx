@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\SliderRepositoryInterface;
 use App\Repositories\SponsorRepositoryInterface;
 use Illuminate\Http\Request;
 
@@ -9,14 +10,16 @@ class HomeController extends Controller
 {
 
     private $sponsorRepository;
+    private $sliderRepository;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(SponsorRepositoryInterface $sponsorRepository)
+    public function __construct(SponsorRepositoryInterface $sponsorRepository, SliderRepositoryInterface $sliderRepository)
     {
         $this->sponsorRepository = $sponsorRepository;
+        $this->sliderRepository = $sliderRepository;
     }
 
     /**
@@ -27,9 +30,11 @@ class HomeController extends Controller
     public function index()
     {
         $sponsors = $this->sponsorRepository->all();
+        $sliders = $this->sliderRepository->all_active_sliders();
         
         return view('home', [
-            'sponsors' => $sponsors
+            'sponsors' => $sponsors,
+            'sliders' => $sliders
         ]);
     }
 }

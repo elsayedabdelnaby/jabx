@@ -11,7 +11,7 @@
 
 @section('content')
     <!-- Hero
-                          ================================================== -->
+                                  ================================================== -->
     <div class="section over-hide">
         <div class="section over-hide padding-top-120 pb-5 bg-dark-blue section-background-niche-18">
             <div class="section-1400 pt-xl-4">
@@ -22,38 +22,17 @@
                                 <div
                                     class="section swiper-landing-v2 pb-4 swiper-container-fade swiper-container-initialized swiper-container-horizontal">
                                     <div class="swiper-wrapper" style="transition-duration: 0ms;">
-                                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
-                                            data-swiper-slide-index="2"
-                                            style="width: 251px; opacity: 0; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-                                            <div class="section img-wrap landing-shadow-1 border-radius-landing-1">
-                                                <img src="{{ asset('uploads/images/sliders/landing-3.png') }}" alt="">
+                                        @foreach ($sliders as $slider)
+                                            <div class="swiper-slide swiper-slide-active"
+                                                data-swiper-slide-index="{{ $slider->id }}"
+                                                style="width: 251px; opacity: 1; transform: translate3d(-502px, 0px, 0px); transition-duration: 0ms;">
+                                                <div class="section img-wrap landing-shadow-1 border-radius-landing-1">
+                                                    <img src="{{ asset($slider->getImagePathAttribute()) }}"
+                                                        alt="{{ $slider->name }}">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0"
-                                            style="width: 251px; opacity: 0; transform: translate3d(-251px, 0px, 0px); transition-duration: 0ms;">
-                                            <div class="section img-wrap landing-shadow-1 border-radius-landing-1">
-                                                <img src="{{ asset('uploads/images/sliders/landing-1.png') }}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1"
-                                            style="width: 251px; opacity: 1; transform: translate3d(-502px, 0px, 0px); transition-duration: 0ms;">
-                                            <div class="section img-wrap landing-shadow-1 border-radius-landing-1">
-                                                <img src="{{ asset('uploads/images/sliders/landing-2.png') }}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2"
-                                            style="width: 251px; opacity: 0; transform: translate3d(-753px, 0px, 0px); transition-duration: 0ms;">
-                                            <div class="section img-wrap landing-shadow-1 border-radius-landing-1">
-                                                <img src="{{ asset('uploads/images/sliders/landing-3.png') }}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
-                                            data-swiper-slide-index="0"
-                                            style="width: 251px; opacity: 0; transform: translate3d(-1004px, 0px, 0px); transition-duration: 0ms;">
-                                            <div class="section img-wrap landing-shadow-1 border-radius-landing-1">
-                                                <img src="{{ asset('uploads/images/sliders/landing-1.png') }}" alt="">
-                                            </div>
-                                        </div>
+                                        @endforeach
+
                                     </div>
                                     <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
                                         <span class="swiper-pagination-bullet" tabindex="0" role="button"
@@ -99,7 +78,7 @@
 
     </div>
     <!-- Services section
-                          ================================================== -->
+                                  ================================================== -->
     <div class="section over-hide padding-bottom-120 bg-light-2 section-background-13">
         <div class="section-1400">
             <div class="container-fluid">
@@ -171,7 +150,7 @@
     </div>
 
     <!-- Logos section
-                      ================================================== -->
+                              ================================================== -->
     <div class="section over-hide padding-top-bottom bg-black">
         <div class="section-1400">
             <div class="container-fluid">
@@ -196,9 +175,9 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Subscribe section
-       ================================================== -->
+               ================================================== -->
     <div class="section padding-bottom-120 bg-light-2 section-background-niche-20">
         <div class="section-1400">
             <div class="container-fluid">
