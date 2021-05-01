@@ -89,6 +89,25 @@
             <!--end::Toolbar-->
         </div>
     </div>
+
+    <div class="d-flex flex-column-fluid">
+        <!--begin::Container-->
+        <div class=" container ">
+            <!--begin::Notice-->
+            @if (session('message'))
+                <div class="alert @if (session('status')) alert-success @else alert-danger @endif alert-dismissible fade show"
+                    role="alert">
+                    {{ session('message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+            <!--end::Notice-->
+        </div>
+        <!--end::Container-->
+    </div>
+    
 @endsection
 
 @section('content')

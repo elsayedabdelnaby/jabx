@@ -38,44 +38,6 @@ var KTDatatableDataLocalDemo = function () {
                 title: 'Name',
                 autoHide: false,
                 width: 250,
-                template: function (data) {
-                    var number = KTUtil.getRandomInt(1, 14);
-                    var user_img = 'background-image:url(\'assets/media/users/100_' + number + '.jpg\')';
-
-                    var output = '';
-                    output = '<div class="d-flex align-items-center">\
-								<div class="symbol symbol-40 flex-shrink-0">\
-									<div class="symbol-label" style="' + user_img + '"></div>\
-								</div>\
-							</div>';
-                    return output;
-                }
-            }, {
-                field: 'email',
-                title: 'Email',
-                autoHide: false,
-            }, {
-                field: 'is_active',
-                title: 'Status',
-                autoHide: false,
-                // callback function support for column rendering
-                template: function (row) {
-                    var status = {
-                        1: {
-                            'title': 'Active',
-                            'class': ' label-light-success'
-                        },
-                        2: {
-                            'title': 'Inactive',
-                            'class': ' label-light-danger'
-                        },
-                    };
-                    return '<span class="label font-weight-bold label-lg ' + status[row.is_active].class + ' label-inline">' + status[row.is_active].title + '</span>';
-                },
-            }, {
-                field: 'role',
-                title: 'Role',
-                autoHide: false,
             }, {
                 field: 'Actions',
                 title: 'Actions',
@@ -85,7 +47,7 @@ var KTDatatableDataLocalDemo = function () {
                 autoHide: false,
                 template: function (row) {
                     var host = window.location.protocol + "//" + window.location.host;
-                    return '\<a href="' + host + '/admin/users/' + row.id + '/edit" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">\
+                    return '\<a href="' + host + '/admin/sponsors/' + row.id + '/edit" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">\
 	                            <span class="svg-icon svg-icon-md">\
 	                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
 	                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
@@ -112,15 +74,6 @@ var KTDatatableDataLocalDemo = function () {
             }],
         });
 
-        $('#kt_datatable_search_status').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'is_active');
-        });
-
-        $('#kt_datatable_search_role').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'role');
-        });
-
-        $('#kt_datatable_search_status, #kt_datatable_search_role').selectpicker();
     };
 
     return {

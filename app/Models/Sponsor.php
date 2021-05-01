@@ -12,6 +12,6 @@ class Sponsor extends Model
     protected $append = ['logo_path'];
 
     public function getLogoPathAttribute(){
-        return 'uploads/images/sponsors'.$this->logo;
+        return 'uploads/images/sponsors/'.$this->logo;
     }
 }

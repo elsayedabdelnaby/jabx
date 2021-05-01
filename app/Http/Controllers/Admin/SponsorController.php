@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\SponsorResource;
+use App\Models\Sponsor;
 use App\Repositories\SponsorRepositoryInterface;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
@@ -22,7 +23,7 @@ class SponsorController extends Controller
     public function __construct(SponsorRepositoryInterface $sponsorRepository)
     {
         $this->sponsorRepository = $sponsorRepository;
-        $this->image_path =  public_path('uploads/images/') . '/';
+        $this->image_path =  public_path('uploads/images/sponsors') . '/';
     }
 
     /**
@@ -59,7 +60,23 @@ class SponsorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sponsor = new Sponsor();
+
+        $sponsor->name = $request->name;
+        $logo_name = '';
+        $logo_file = $this->verifyAndUpload($request, 'logo', $this->image_path, $logo_name);
+
+        if (!is_null($logo_file)) {
+            $logo_name = $logo_file;
+        }
+
+        $sponsor->logo = $logo_name;
+        $sponsor->save();
+
+        return redirect()
+            ->route('admin.sponsors.index')
+            ->with('status', true)
+            ->with('message', 'Sponsor Created Successfully');
     }
 
     /**
