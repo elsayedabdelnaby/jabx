@@ -72,7 +72,7 @@
                 <li class="menu-item  menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon2-laptop"></i>
-                        <span class="menu-text">Pages</span>
+                        <span class="menu-text">Modules</span>
                         <i class="menu-arrow"></i>
                     </a>
                     <div class="menu-submenu ">
@@ -80,15 +80,15 @@
                         <ul class="menu-subnav">
                             <li class="menu-item  menu-item-parent" aria-haspopup="true">
                                 <span class="menu-link">
-                                    <span class="menu-text">Pages</span>
+                                    <span class="menu-text">Modules</span>
                                 </span>
                             </li>
                             <li class="menu-item " aria-haspopup="true">
-                                <a href="#" class="menu-link ">
+                                <a href="{{ route('admin.sponsors.index') }}" class="menu-link ">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">Reports</span>
+                                    <span class="menu-text">Sponsors</span>
                                 </a>
                             </li>
                             <li class="menu-item " aria-haspopup="true">
@@ -193,11 +193,6 @@
                             </li>
                         </ul>
                     </div>
-                </li>
-                <li class="menu-item " aria-haspopup="true">
-                    <a href="{{ route('admin.users.index') }}" class="menu-link ">
-                        <i class="menu-icon flaticon2-console"></i><span class="menu-text">@lang( 'admin.users' )</span>
-                    </a>
                 </li>
                 <li class="menu-item " aria-haspopup="true">
                     <a href="#" class="menu-link ">
