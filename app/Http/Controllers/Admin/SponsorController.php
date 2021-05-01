@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\SponsorResource;
 use App\Repositories\SponsorRepositoryInterface;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
@@ -32,9 +33,8 @@ class SponsorController extends Controller
     public function index()
     {
         $sponsors = $this->sponsorRepository->all();
-        dd($sponsors);
         return view('admin.sponsors.index', [
-            'sponsors' => ''/* AdminUserResource::collection($sponsors) */,
+            'sponsors' => SponsorResource::collection($sponsors),
             'module' => 'sponsors',
         ]);
     }
@@ -46,7 +46,9 @@ class SponsorController extends Controller
      */
     public function create()
     {
-        return view('admin.sponsors.create');
+        return view('admin.sponsors.create', [
+            'module' => 'sponsors',
+        ]);
     }
 
     /**
