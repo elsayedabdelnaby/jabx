@@ -19,5 +19,7 @@ Route::group([
         Route::put('/sitesettings/{id}', 'SiteSettingsController@update')->name('sitesettings.update');
         Route::resource('sponsors', 'SponsorController')->name('', 'sponsors');
         Route::resource('sliders', 'SliderController')->name('', 'sliders');
+        Route::get('/contactusdata/{id}', 'ContactUsDataController@edit')->name('contactusdata.edit');
+        Route::put('/contactusdata/{id}', 'ContactUsDataController@update')->name('contactusdata.update');
     });
 });

@@ -52,6 +52,16 @@ return [
     'sliders' => 'Sliders',
     'slider' => 'Slider',
     'sliders_management' => 'Sliders Management',
-
+    'contactus_data' => 'Contact Us Data',
+    'address_title' => 'Address Title',
+    'address_link' => 'Address Link',
+    'working_times' => 'Working Times',
+    'phone_1' => 'Primary Phone',
+    'phone_2' => 'Secondary Phone',
+    'email' => 'Email',
+    'facebook_link' => 'Facebook Link',
+    'instagram_link' => 'Instagram Link',
+    'twitter_link' => 'Twitter Link',
+    'linkedintwitter_link' => 'Linkedin Link',
 
 ];
