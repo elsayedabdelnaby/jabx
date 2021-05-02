@@ -21,5 +21,6 @@ Route::group([
         Route::resource('sliders', 'SliderController')->name('', 'sliders');
         Route::get('/contactusdata/{id}', 'ContactUsDataController@edit')->name('contactusdata.edit');
         Route::put('/contactusdata/{id}', 'ContactUsDataController@update')->name('contactusdata.update');
+        Route::resource('products', 'ProductController')->name('', 'products');
     });
 });

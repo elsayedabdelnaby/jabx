@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function index()
     {
         $sponsors = $this->sponsorRepository->all();
-        $sliders = $this->sliderRepository->all_active_sliders();
+        $sliders = $this->sliderRepository->getAllActiveSliders();
         
         return view('home', [
             'sponsors' => $sponsors,

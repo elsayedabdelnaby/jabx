@@ -30,6 +30,7 @@ Route::group([
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', FrontEndPages::class]
 ], function () {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/products/{slug}', 'ProductController@show')->name('product');
 });
 
 

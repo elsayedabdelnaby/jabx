@@ -8590,7 +8590,7 @@ body.modal-open {
 	height: 100%;
 	z-index: 1;
 	background-color: var(--dark-blue);
-	opacity: 0.4;
+	opacity: 0.7;
 }
 .background-dark-blue-over-darker {
     position:absolute;

@@ -9,7 +9,7 @@
                         <nav class="navbar navbar-expand-xl navbar-light">
 
                             <a class="navbar-brand animsition-link" href="{{ route('home') }}"><img
-                                    src="{{ $site_settings->getLogoPathAttribute() }}" alt="logo"></a>
+                                    src="{{ asset($site_settings->getLogoPathAttribute()) }}" alt="logo"></a>
 
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

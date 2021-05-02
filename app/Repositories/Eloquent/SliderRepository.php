@@ -34,7 +34,7 @@ class SliderRepository extends BaseRepository implements SliderRepositoryInterfa
     /**
      * @return Collection
      */
-    public function all_active_sliders(): Collection
+    public function getAllActiveSliders(): Collection
     {
         return $this->model->where('is_active', 1)->get();
     }
