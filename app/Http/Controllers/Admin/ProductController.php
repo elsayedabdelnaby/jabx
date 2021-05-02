@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ProductResource;
 use App\Repositories\ProductRepositoryInterface;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
@@ -31,9 +32,8 @@ class ProductController extends Controller
     public function index()
     {
         $products = $this->productRepository->all();
-        dd($products);
         return view('admin.products.index', [
-            //'sliders' => ProductResource::collection($sliders),
+            'sliders' => ProductResource::collection($products),
             'module' => 'products',
         ]);
     }
