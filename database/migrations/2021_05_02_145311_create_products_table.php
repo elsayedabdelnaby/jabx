@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->boolean('is_publish');
             $table->boolean('display_in_header');
             $table->string('image');
+            $table->integer('sort')->default(1);
             $table->string('meta_title');
             $table->string('meta_description');
             $table->string('meta_keywords');
