@@ -2,10 +2,10 @@
 
 @section('meta')
     @include('front.partials.meta', [
-    'title' => $site_settings->meta_title,
-    'keywords' => $site_settings->meta_keywords,
-    'description' => $site_settings->meta_description,
-    'image' => $site_settings->getLogoPathAttribute()
+    'title' => $product->meta_title,
+    'keywords' => $product->meta_keywords,
+    'description' => $product->meta_description,
+    'image' => $product->getImagePathAttribute()
     ])
 @endsection
 

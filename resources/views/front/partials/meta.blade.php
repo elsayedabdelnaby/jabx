@@ -6,8 +6,8 @@
 <meta itemprop="image" content="{{ asset($image) }}">
 <meta itemprop="description" content="{{ $description }}" />
 <!-- Twitter Card data -->
-<meta name='twitter:app:country' content='EG' />
-<meta name="twitter:site" content="@{{ $title }}" />
+<meta name='twitter:app:country' content='US' />
+<meta name="twitter:site" content="{{ $title }}" />
 <meta name="twitter:creator" content="@Sayed-Elaraby" />
 <meta name="twitter:title" content="{{ $title }}">
 <meta name="twitter:card" content="summary_large_image" />
