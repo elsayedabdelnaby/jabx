@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductResource;
+use App\Models\Product;
 use App\Repositories\ProductRepositoryInterface;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
@@ -33,7 +34,7 @@ class ProductController extends Controller
     {
         $products = $this->productRepository->all();
         return view('admin.products.index', [
-            'sliders' => ProductResource::collection($products),
+            'products' => ProductResource::collection($products),
             'module' => 'products',
         ]);
     }
@@ -45,7 +46,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.products.create', [
+            'module' => 'products',
+        ]);
     }
 
     /**
@@ -56,7 +59,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+        $product->name = 'Casa Cook Kos';
+        $product->short_description = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.';
+        $product->slug = 'casa_cook_kos';
+        $product->description = 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.';
+        $product->is_publish = 1;
+        $product->display_in_header = 1;
+        $product->image = 'project-38.jpg';
+        $product->sort = 1;
+        $product->meta_title = 'Casa Cook Kos';
+        $product->meta_description = 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.';
+        $product->meta_keywords = 'Casa|Nemo';
+        $product->save();
     }
 
     /**
@@ -90,7 +105,19 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = new Product();
+        $product->name = 'Casa Cook Kos';
+        $product->short_description = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.';
+        $product->slug = 'casa_cook_kos';
+        $product->description = 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.';
+        $product->is_publish = 1;
+        $product->display_in_header = 1;
+        $product->image = 'project-38.jpg';
+        $product->sort = 1;
+        $product->meta_title = 'Casa Cook Kos';
+        $product->meta_description = 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.';
+        $product->meta_keywords = 'Casa|Nemo';
+        $product->save();
     }
 
     /**

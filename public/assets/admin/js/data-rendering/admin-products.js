@@ -38,22 +38,40 @@ var KTDatatableDataLocalDemo = function () {
                 autoHide: false,
                 width: 250,
             }, {
-                field: 'is_active',
-                title: 'Status',
+                field: 'is_publish',
+                title: 'Publish',
                 autoHide: false,
                 // callback function support for column rendering
                 template: function (row) {
                     var status = {
                         1: {
-                            'title': 'Active',
+                            'title': 'Publish',
                             'class': ' label-light-success'
                         },
                         2: {
-                            'title': 'Inactive',
+                            'title': 'Not Publish',
                             'class': ' label-light-danger'
                         },
                     };
-                    return '<span class="label font-weight-bold label-lg ' + status[row.is_active].class + ' label-inline">' + status[row.is_active].title + '</span>';
+                    return '<span class="label font-weight-bold label-lg ' + status[row.is_publish].class + ' label-inline">' + status[row.is_publish].title + '</span>';
+                },
+            }, {
+                field: 'display_in_header',
+                title: 'In Header?',
+                autoHide: false,
+                // callback function support for column rendering
+                template: function (row) {
+                    var status = {
+                        yes: {
+                            'title': 'Yes',
+                            'class': ' label-light-success'
+                        },
+                        no: {
+                            'title': 'No',
+                            'class': ' label-light-danger'
+                        },
+                    };
+                    return '<span class="label font-weight-bold label-lg ' + status[row.display_in_header].class + ' label-inline">' + status[row.display_in_header].title + '</span>';
                 },
             }, {
                 field: 'Actions',
@@ -64,7 +82,7 @@ var KTDatatableDataLocalDemo = function () {
                 autoHide: false,
                 template: function (row) {
                     var host = window.location.protocol + "//" + window.location.host;
-                    return '\<a href="' + host + '/admin/sliders/' + row.id + '/edit" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">\
+                    return '\<a href="' + host + '/admin/producst/' + row.id + '/edit" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">\
 	                            <span class="svg-icon svg-icon-md">\
 	                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
 	                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
@@ -75,7 +93,7 @@ var KTDatatableDataLocalDemo = function () {
 	                                </svg>\
 	                            </span>\
 							</a>\
-							<a href="javascript:;" id="' + row.id + '" onclick="deleteSlider(' + row.id + ')" class="btn btn-sm btn-clean btn-icon" title="Delete">\
+							<a href="javascript:;" id="' + row.id + '" onclick="deleteProduct(' + row.id + ')" class="btn btn-sm btn-clean btn-icon" title="Delete">\
 	                            <span class="svg-icon svg-icon-md">\
 	                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
 	                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
@@ -91,11 +109,15 @@ var KTDatatableDataLocalDemo = function () {
             }],
         });
 
-        $('#kt_datatable_search_status').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'is_active');
+        $('#kt_datatable_search_is_pubish').on('change', function () {
+            datatable.search($(this).val().toLowerCase(), 'is_publish');
         });
 
-        $('#kt_datatable_search_status').selectpicker();
+        $('#kt_datatable_search_in_header').on('change', function () {
+            datatable.search($(this).val().toLowerCase(), 'display_in_header');
+        });
+
+        $('#kt_datatable_search_is_pubish', '#kt_datatable_search_in_header').selectpicker();
     };
 
     return {
@@ -111,18 +133,18 @@ jQuery(document).ready(function () {
     KTDatatableDataLocalDemo.init();
 });
 
-function deleteSlider(id) {
+function deleteProduct(id) {
     var host = window.location.protocol + "//" + window.location.host;
     $.ajax({
         type: "DELETE",
-        url: host + "/admin/sliders/" + id,
+        url: host + "/admin/producst/" + id,
         data: {
             _method: 'DELETE',
             "id": id
         },
         success: function (response) {
             swal.fire({
-                text: "Slider deleted successfully",
+                text: "Product deleted successfully",
                 icon: "success",
                 buttonsStyling: false,
                 confirmButtonText: "Ok, got it!",

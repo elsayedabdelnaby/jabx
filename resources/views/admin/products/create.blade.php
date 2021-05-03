@@ -1,11 +1,11 @@
 @extends('layouts.admin.app')
 
 @section('title')
-    Admin-Sliders Create
+    Admin-Products Create
 @endsection
 
 @section('subheader')
-    @include('admin.sliders.subheader')
+    @include('admin.products.subheader')
     <div class="d-flex flex-column-fluid">
         <!--begin::Container-->
         <div class=" container ">
@@ -31,7 +31,7 @@
 
         <!--begin::Card body-->
         <div class="card-body px-0">
-            <form class="form" method="POST" action="{{ route('admin.sliders.store') }}" id="slider_create_form"
+            <form class="form" method="POST" action="{{ route('admin.products.store') }}" id="product_create_form"
                 enctype="multipart/form-data">
                 @csrf
                 @method('post')
@@ -40,7 +40,7 @@
                         <div class="form-group row">
                             <div class="col-lg-6">
                                 <label>* @lang('admin.name'):</label>
-                                <input type="text" name="name" class="form-control" placeholder="Enter name of slider"
+                                <input type="text" name="name" class="form-control" placeholder="Enter name of product"
                                     value="{{ old('name') }}" />
                             </div>
                             <div class="col-lg-6">
@@ -91,6 +91,6 @@
 
 @section('script')
     <!--begin::Page Scripts(used by this page)-->
-    <script src="{{ asset('assets/admin/js/pages/custom/sliders/edit-sliders.js') }} "></script>
+    <script src="{{ asset('assets/admin/js/pages/custom/products/edit.js') }} "></script>
     <!--end::Page Scripts-->
 @endsection

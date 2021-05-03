@@ -101,15 +101,23 @@
                             </div>
                             <div class="col-md-4 my-2 my-md-0">
                                 <div class="d-flex align-items-center">
-                                    <label class="mr-3 mb-0 d-none d-md-block">@lang( 'admin.status' ):</label>
-                                    <select class="form-control" id="kt_datatable_search_status">
+                                    <label class="mr-3 mb-0 d-none d-md-block">@lang( 'admin.publish' ):</label>
+                                    <select class="form-control" id="kt_datatable_search_is_pubish">
                                         <option value=""> @lang( 'admin.all' ) </option>
-                                        <option value="1"> @lang( 'admin.active' ) </option>
-                                        <option value="2"> @lang( 'admin.inactive' ) </option>
+                                        <option value="1"> @lang( 'admin.publish' ) </option>
+                                        <option value="2"> @lang( 'admin.not_publish' ) </option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-4 my-2 my-md-0">
+                                <div class="d-flex align-items-center">
+                                    <label class="mr-3 mb-0 d-none d-md-block">@lang( 'admin.show_in_header' ):</label>
+                                    <select class="form-control" id="kt_datatable_search_in_header">
+                                        <option value=""> @lang( 'admin.all' ) </option>
+                                        <option value="yes"> @lang( 'admin.yes' ) </option>
+                                        <option value="no"> @lang( 'admin.no' ) </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
