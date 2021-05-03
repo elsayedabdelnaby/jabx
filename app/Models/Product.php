@@ -13,7 +13,7 @@ class Product extends Model
 
     public function getImagePathAttribute()
     {
-        return 'uploads/images/sliders/' . $this->image;
+        return 'uploads/images/products/' . $this->image;
     }
 
     public function getIsPublishAttribute($value)

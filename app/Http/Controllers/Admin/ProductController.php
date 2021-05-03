@@ -117,7 +117,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('admin.products.edit', [
+            'product' => $product,
+            'module' => 'products',
+        ]);
     }
 
     /**
@@ -129,19 +133,43 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product = new Product();
-        $product->name = 'Casa Cook Kos';
-        $product->short_description = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.';
-        $product->slug = 'casa_cook_kos';
-        $product->description = 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.';
-        $product->is_publish = 1;
-        $product->display_in_header = 1;
-        $product->image = 'project-38.jpg';
-        $product->sort = 1;
-        $product->meta_title = 'Casa Cook Kos';
-        $product->meta_description = 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.';
-        $product->meta_keywords = 'Casa|Nemo';
+        $product = Product::findOrFail($id);
+        $product->name = $request->name;
+        $product->short_description = $request->short_description;
+        $product->slug = $request->slug;
+        $product->description = $request->description;
+        $product->sort = $request->sort;
+        $product->meta_title = $request->meta_title;
+        $product->meta_description = $request->meta_description;
+        $product->meta_keywords = $request->meta_keywords;
+
+        if ($request->is_publish) {
+            $product->is_publish = 1;
+        } else {
+            $product->is_publish = 0;
+        }
+
+        if ($request->display_in_header) {
+            $product->display_in_header = 1;
+        } else {
+            $product->display_in_header = 0;
+        }
+
+        $image_name = $product->image;
+        $image_file = $this->verifyAndUpload($request, 'image', $this->image_path, $image_name);
+
+        if (!is_null($image_file)) {
+            $image_name = $image_file;
+        }
+
+        $product->image = $image_name;
+
         $product->save();
+
+        return redirect()
+            ->route('admin.products.edit', $product)
+            ->with('status', true)
+            ->with('message', 'product Updated Successfully');
     }
 
     /**
@@ -152,6 +180,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        File::delete($this->image_path . $product->image);
+        $product->delete();
+        return true;
     }
 }
