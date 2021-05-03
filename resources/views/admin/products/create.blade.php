@@ -42,6 +42,12 @@
                                 <label>* @lang('admin.name'):</label>
                                 <input type="text" name="name" class="form-control" placeholder="Enter name of product"
                                     value="{{ old('name') }}" />
+                                @error('name')
+                                    <div class="fv-plugins-message-container">
+                                        <div class="fv-help-block">
+                                            {{ $message }}</div>
+                                    </div>
+                                @enderror
                             </div>
                             <div class="col-lg-3">
                                 <label>@lang('admin.is_publish'):</label>
@@ -55,13 +61,26 @@
                         <div class="form-group row">
                             <div class="col-lg-6">
                                 <label>* @lang('admin.short_description'):</label>
-                                <input type="text" name="short_description" class="form-control" placeholder="Enter short description of product"
+                                <input type="text" name="short_description" class="form-control"
+                                    placeholder="Enter short description of product"
                                     value="{{ old('short_description') }}" />
+                                @error('short_description')
+                                    <div class="fv-plugins-message-container">
+                                        <div class="fv-help-block">
+                                            {{ $message }}</div>
+                                    </div>
+                                @enderror
                             </div>
                             <div class="col-lg-6">
                                 <label>* @lang('admin.slug'):</label>
                                 <input type="text" name="slug" class="form-control" placeholder="Enter slug of product"
-                                value=" {{ old('slug') }}" />
+                                    value=" {{ old('slug') }}" />
+                                @error('slug')
+                                    <div class="fv-plugins-message-container">
+                                        <div class="fv-help-block">
+                                            {{ $message }}</div>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group row">
@@ -69,34 +88,60 @@
                                 <label>* @lang('admin.description'):</label>
                                 <div class="card card-custom">
                                     <div class="card-body">
-                                        <textarea name="description" id="kt-ckeditor-product-description">                                            
-                                        </textarea>
+                                        <textarea name="description" id="kt-ckeditor-product-description">
+                                                    {{ old('description') }}
+                                                </textarea>
                                     </div>
                                 </div>
+                                @error('description')
+                                    <div class="fv-plugins-message-container">
+                                        <div class="fv-help-block">
+                                            {{ $message }}</div>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6">
                                 <label>* @lang('admin.meta_title'):</label>
-                                <input type="text" name="meta_title" class="form-control" placeholder="Enter meta title of product"
-                                    value="{{ old('meta_title') }}" />
+                                <input type="text" name="meta_title" class="form-control"
+                                    placeholder="Enter meta title of product" value="{{ old('meta_title') }}" />
+                                @error('meta_title')
+                                    <div class="fv-plugins-message-container">
+                                        <div class="fv-help-block">
+                                            {{ $message }}</div>
+                                    </div>
+                                @enderror
                             </div>
                             <div class="col-lg-6">
                                 <label>* @lang('admin.meta_description'):</label>
-                                <input type="text" name="meta_description" class="form-control" placeholder="Enter meta description of product"
+                                <input type="text" name="meta_description" class="form-control"
+                                    placeholder="Enter meta description of product"
                                     value="{{ old('meta_description') }}" />
+                                @error('meta_description')
+                                    <div class="fv-plugins-message-container">
+                                        <div class="fv-help-block">
+                                            {{ $message }}</div>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6">
                                 <label>* @lang('admin.meta_keywords'):</label>
-                                <input type="text" name="meta_keywords" class="form-control" placeholder="Enter meta keywords of product"
-                                    value="{{ old('meta_keywords') }}" />
+                                <input type="text" name="meta_keywords" class="form-control"
+                                    placeholder="Enter meta keywords of product" value="{{ old('meta_keywords') }}" />
+                                @error('meta_keywords')
+                                    <div class="fv-plugins-message-container">
+                                        <div class="fv-help-block">
+                                            {{ $message }}</div>
+                                    </div>
+                                @enderror
                             </div>
                             <div class="col-lg-6">
                                 <label>* @lang('admin.sort'):</label>
-                                <input type="number" min="1" name="sort" class="form-control" placeholder="Enter sort of product"
-                                    value="{{ old('sort') }}" />
+                                <input type="number" min="1" name="sort" class="form-control"
+                                    placeholder="Enter sort of product" value="{{ old('sort') }}" />
                             </div>
                         </div>
 
@@ -148,7 +193,7 @@
     <!--end::Page Vendors-->
 
     <!--begin::Page Scripts(used by this page)-->
-        <script src="{{ asset('assets/admin/js/pages/crud/forms/editors/ckeditor-classic.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/pages/crud/forms/editors/ckeditor-classic.js') }}"></script>
     <!--end::Page Scripts-->
     <script src="{{ asset('assets/admin/js/pages/custom/products/edit.js') }} "></script>
     <!--end::Page Scripts-->

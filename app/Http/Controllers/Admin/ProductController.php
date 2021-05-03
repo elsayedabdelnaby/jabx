@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CreateProductRequest;
+use App\Http\Requests\Admin\UpdateProductRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use App\Repositories\ProductRepositoryInterface;
@@ -57,7 +59,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateProductRequest $request)
     {
         $product = new Product();
         $product->name = $request->name;
@@ -131,7 +133,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateProductRequest $request, $id)
     {
         $product = Product::findOrFail($id);
         $product->name = $request->name;
@@ -156,7 +158,7 @@ class ProductController extends Controller
         }
 
         $image_name = $product->image;
-        $image_file = $this->verifyAndUpload($request, 'image', $this->image_path, $image_name);
+        $image_file = $this->verifyAndUpload($request, 'product_image', $this->image_path, $image_name);
 
         if (!is_null($image_file)) {
             $image_name = $image_file;
