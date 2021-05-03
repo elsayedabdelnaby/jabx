@@ -20,21 +20,18 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ml-auto pt-4 pt-xl-0 mr-xl-4">
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link active" data-toggle="dropdown" role="button"
-                                            aria-haspopup="true" aria-expanded="false" href="{{ route('home') }}">Home</a>
+                                        <a class="nav-link @if(collect(request()->segments())->last() == App::getLocale())active @endif" aria-haspopup="true" aria-expanded="false"
+                                            href="{{ route('home') }}">Home</a>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link" aria-haspopup="true" aria-expanded="false"
-                                            href="./project-4.html">Product 1</a>
-                                    </li>
-                                    <li class="nav-item dropdown mega-menu-dropdown-link">
-                                        <a class="nav-link" aria-haspopup="true" aria-expanded="false"
-                                            href="./project-4.html">Product 2</a>
-                                    </li>
-                                    <li class="nav-item dropdown mega-menu-dropdown-link">
-                                        <a class="nav-link" aria-haspopup="true" aria-expanded="false"
-                                            href="./project-4.html">Product 3</a>
-                                    </li>
+                                    @forelse ($headers_products as $product)
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link @if($product->slug == collect(request()->segments())->last()) active @endif" aria-haspopup="true" aria-expanded="false"
+                                                href="{{ route('product', $product->slug) }}">{{ $product->name }}</a>
+                                        </li>
+                                    @empty
+                                        
+                                    @endforelse
+                                    
                                 </ul>
                                 <a href="#" class="btn btn-icon-transparent btn-44 mt-4 mt-xl-0" data-toggle="modal"
                                     data-target="#modalSearch">

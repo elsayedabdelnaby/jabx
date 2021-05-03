@@ -15,7 +15,7 @@ class ProductController extends Controller
     private $image_path;
 
     use ImageTrait;
- 
+
     /**
      *@param ProductRepositoryInterface
      */

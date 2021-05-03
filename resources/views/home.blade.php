@@ -11,7 +11,7 @@
 
 @section('content')
     <!-- Hero
-                                  ================================================== -->
+                                      ================================================== -->
     <div class="section over-hide">
         <div class="section over-hide padding-top-120 pb-5 bg-dark-blue section-background-niche-18">
             <div class="section-1400 pt-xl-4">
@@ -78,7 +78,7 @@
 
     </div>
     <!-- Services section
-                                  ================================================== -->
+                                      ================================================== -->
     <div class="section over-hide padding-bottom-120 bg-light-2 section-background-13">
         <div class="section-1400">
             <div class="container-fluid">
@@ -150,7 +150,7 @@
     </div>
 
     <!-- Logos section
-                              ================================================== -->
+                                  ================================================== -->
     <div class="section over-hide padding-top-bottom bg-black">
         <div class="section-1400">
             <div class="container-fluid">
@@ -177,7 +177,7 @@
     </div>
 
     <!-- Subscribe section
-               ================================================== -->
+                   ================================================== -->
     <div class="section padding-bottom-120 bg-light-2 section-background-niche-20">
         <div class="section-1400">
             <div class="container-fluid">
@@ -200,9 +200,22 @@
                                 Subscribe
                             </button>
                             <div class="w-100 pb-4"></div>
-                            <a href="" class="link link-dark-primary mx-2" data-hover="Instagram">Instagram</a>
-                            <a href="" class="link link-dark-primary mx-2" data-hover="Twitter">Twitter</a>
-                            <a href="" class="link link-dark-primary mx-2" data-hover="LinkedIn">LinkedIn</a>
+                            @if (!empty($contact_us_data->facebook_link))
+                                <a href="{{ $contact_us_data->facebook_link }}" class="link link-dark-primary mx-2"
+                                    data-hover="Facebook">Facebook</a>
+                            @endif
+                            @if (!empty($contact_us_data->instagram_link))
+                                <a href="{{ $contact_us_data->instagram_link }}" class="link link-dark-primary mx-2"
+                                    data-hover="Instagram">Instagram</a>
+                            @endif
+                            @if (!empty($contact_us_data->twitter_link))
+                                <a href="{{ $contact_us_data->twitter_link }}" class="link link-dark-primary mx-2"
+                                    data-hover="Twitter">Twitter</a>
+                            @endif
+                            @if (!empty($contact_us_data->linkedin_link))
+                                <a href="{{ $contact_us_data->linkedin_link }}" class="link link-dark-primary mx-2"
+                                    data-hover="LinkedIn">LinkedIn</a>
+                            @endif
                         </div>
                     </div>
                 </div>

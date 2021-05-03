@@ -38,4 +38,15 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
     {
         return $this->model->where('is_publish', 1)->get();
     }
+
+    /**
+     * @return Collection
+     */
+    public function getThreeHeadersProducts(): Collection
+    {
+        return $this->model->where([
+            ['is_publish', 1],
+            ['display_in_header', 1],
+        ])->limit(3)->get();
+    }
 }

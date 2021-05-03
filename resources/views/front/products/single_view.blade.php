@@ -22,7 +22,7 @@
                         <div class="col-12">
                             <div class="section text-center">
                                 <h1 class="display-1 mb-3 color-light-2">
-                                    Casa Cook Kos
+                                    {{ $product->name }}
                                 </h1>
                             </div>
                         </div>
@@ -42,23 +42,18 @@
                             Product Info
                         </h5>
                         <p class="lead mb-2">
-                            <i>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                laudantium.</i>
+                            <i>{{ $product->short_description }}.</i>
                         </p>
                         <p class="mb-0">
-                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                            consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Sed ut perspiciatis unde
-                            omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                            explicabo.
+                            {!! $product->description !!}
                         </p>
                     </div>
                 </div>
                 <div class="row padding-top-80">
                     <div class="col-12 mt-4">
-                        <a href="img/project-38.jpg" data-fancybox="">
+                        <a href="{{ asset($product->getImagePathAttribute()) }}" data-fancybox="">
                             <div class="gallery-wrap over-hide border-4 img-wrap">
-                                <img src="img/project-38.jpg" alt="">
+                                <img src="{{ asset($product->getImagePathAttribute()) }}" alt="{{ $product->name }}">
                                 <div class="gallery-mask">
                                     <div class="gallery-icon">
                                         <i class="uil uil-plus size-22 color-white"></i>
@@ -74,7 +69,7 @@
 
     <!-- section
       ================================================== -->
-    <div class="section over-hide padding-bottom-120">
+    {{-- <div class="section over-hide padding-bottom-120">
         <div class="section-1400">
             <div class="container-fluid">
                 <div class="row justify-content-center">
@@ -162,5 +157,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
