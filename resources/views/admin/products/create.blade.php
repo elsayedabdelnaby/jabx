@@ -43,11 +43,63 @@
                                 <input type="text" name="name" class="form-control" placeholder="Enter name of product"
                                     value="{{ old('name') }}" />
                             </div>
-                            <div class="col-lg-6">
-                                <label>@lang('admin.is_active'):</label>
-                                <input type="checkbox" name="is_active" class="form-control" @if (old('is_active') == 'on') checked @endif />
+                            <div class="col-lg-3">
+                                <label>@lang('admin.is_publish'):</label>
+                                <input type="checkbox" name="is_publish" class="form-control" @if (old('is_publish') == 'on') checked @endif />
+                            </div>
+                            <div class="col-lg-3">
+                                <label>@lang('admin.display_in_header'):</label>
+                                <input type="checkbox" name="display_in_header" class="form-control" @if (old('display_in_header') == 'on') checked @endif />
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <div class="col-lg-6">
+                                <label>* @lang('admin.short_description'):</label>
+                                <input type="text" name="short_description" class="form-control" placeholder="Enter short description of product"
+                                    value="{{ old('short_description') }}" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label>* @lang('admin.slug'):</label>
+                                <input type="text" name="slug" class="form-control" placeholder="Enter slug of product"
+                                value=" {{ old('slug') }}" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <label>* @lang('admin.description'):</label>
+                                <div class="card card-custom">
+                                    <div class="card-body">
+                                        <textarea name="description" id="kt-ckeditor-product-description">                                            
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-6">
+                                <label>* @lang('admin.meta_title'):</label>
+                                <input type="text" name="meta_title" class="form-control" placeholder="Enter meta title of product"
+                                    value="{{ old('meta_title') }}" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label>* @lang('admin.meta_description'):</label>
+                                <input type="text" name="meta_description" class="form-control" placeholder="Enter meta description of product"
+                                    value="{{ old('meta_description') }}" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-6">
+                                <label>* @lang('admin.meta_keywords'):</label>
+                                <input type="text" name="meta_keywords" class="form-control" placeholder="Enter meta keywords of product"
+                                    value="{{ old('meta_keywords') }}" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label>* @lang('admin.sort'):</label>
+                                <input type="number" min="1" name="sort" class="form-control" placeholder="Enter sort of product"
+                                    value="{{ old('sort') }}" />
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <div class="col-lg-6">
                                 <div class="image-input image-input-outline" id="image">
@@ -91,6 +143,13 @@
 
 @section('script')
     <!--begin::Page Scripts(used by this page)-->
+    <!--begin::Page Vendors(used by this page)-->
+    <script src="{{ asset('assets/admin/js/pages/custom/ckeditor/ckeditor-classic.bundle.js') }}"></script>
+    <!--end::Page Vendors-->
+
+    <!--begin::Page Scripts(used by this page)-->
+        <script src="{{ asset('assets/admin/js/pages/crud/forms/editors/ckeditor-classic.js') }}"></script>
+    <!--end::Page Scripts-->
     <script src="{{ asset('assets/admin/js/pages/custom/products/edit.js') }} "></script>
     <!--end::Page Scripts-->
 @endsection
