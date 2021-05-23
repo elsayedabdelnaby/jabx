@@ -1719,7 +1719,7 @@
 		
 		//Scroll back to top
 		
-		var progressPath = document.querySelector('.progress-wrap path');
+		/* var progressPath = document.querySelector('.progress-wrap path');
 		var pathLength = progressPath.getTotalLength();
 		progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
 		progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
@@ -1747,7 +1747,7 @@
 			event.preventDefault();
 			jQuery('html, body').animate({scrollTop: 0}, duration);
 			return false;
-		})
+		}) */
 		
 		
 		/* Video */

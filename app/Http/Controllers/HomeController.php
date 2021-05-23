@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sponsor;
 use App\Repositories\SliderRepositoryInterface;
 use App\Repositories\SponsorRepositoryInterface;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sponsors = $this->sponsorRepository->all();
+        $sponsors = Sponsor::all();//$this->sponsorRepository->all();
         $sliders = $this->sliderRepository->getAllActiveSliders();
         
         return view('home', [

@@ -53,6 +53,7 @@
     <script src="{{ asset('assets/front/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/front/js/plugins.js') }}"></script>
     <script src="{{ asset('assets/front/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/front/js/home.js') }}"></script>
     <!-- End Document
 ================================================== -->
     <!-- Code injected by live-server -->
