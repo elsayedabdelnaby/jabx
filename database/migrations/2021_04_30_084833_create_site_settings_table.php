@@ -19,7 +19,7 @@ class CreateSiteSettingsTable extends Migration
             $table->string('logo');
             $table->string('favicon')->default('favicon.png');
             $table->string('meta_title');
-            $table->string('meta_keyword');
+            $table->string('meta_keywords');
             $table->string('meta_description');
             $table->timestamps();
         });
