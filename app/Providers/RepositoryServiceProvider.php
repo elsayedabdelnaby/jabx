@@ -8,10 +8,12 @@ use App\Repositories\Eloquent\BaseRepository;
 use App\Repositories\Eloquent\ProductRepository;
 use App\Repositories\Eloquent\SliderRepository;
 use App\Repositories\Eloquent\SponsorRepository;
+use App\Repositories\Eloquent\SubscriberRepository;
 use App\Repositories\EloquentRepositoryInterface;
 use App\Repositories\ProductRepositoryInterface;
 use App\Repositories\SliderRepositoryInterface;
 use App\Repositories\SponsorRepositoryInterface;
+use App\Repositories\SubscriberRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -38,5 +40,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(SponsorRepositoryInterface::class, SponsorRepository::class);
         $this->app->bind(SliderRepositoryInterface::class, SliderRepository::class);
         $this->app->bind(ProductRepositoryInterface::class, ProductRepository::class);
+        $this->app->bind(SubscriberRepositoryInterface::class, SubscriberRepository::class);
     }
 }

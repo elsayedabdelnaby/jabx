@@ -22,5 +22,6 @@ Route::group([
         Route::get('/contactusdata/{id}', 'ContactUsDataController@edit')->name('contactusdata.edit');
         Route::put('/contactusdata/{id}', 'ContactUsDataController@update')->name('contactusdata.update');
         Route::resource('products', 'ProductController')->name('', 'products');
+        Route::resource('subscribers', 'SubscriberController')->name('', 'subscribers');
     });
 });

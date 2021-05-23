@@ -191,6 +191,7 @@
                             <p class="mb-4">
                                 We won´t spam you, never.
                             </p>
+                            <form id="subscriber-form">
                                 <div class="form-group">
                                     <input type="hidden" id="subscribers_store_url" value="{{ route('subscribers.store') }}">
                                     <span class="alert" id="subscribe-message"></span>
@@ -198,9 +199,10 @@
                                         placeholder="Your Email" id="contactemail" autocomplete="off">
                                     <i class="input-icon big uil uil-at"></i>
                                 </div>
-                                <button class="btn btn-dark-primary mt-3 subscribe-btn" onclick="add_subscribe_mail()">
+                                <button id="submit-subscriber" class="btn btn-dark-primary mt-3 subscribe-btn">
                                     Subscribe
                                 </button>
+                            </form>
                             <div class="w-100 pb-4"></div>
                             @if (!empty($contact_us_data->facebook_link))
                                 <a href="{{ $contact_us_data->facebook_link }}" class="link link-dark-primary mx-2"
