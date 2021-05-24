@@ -15,7 +15,7 @@ class ContactUsDataSeeder extends Seeder
         $contactus_data = new ContactUsData();
         $contactus_data->address_title = '281 1st Avenue, New York';
         $contactus_data->working_times = 'Mon - Sat, 8AM to 6PM';
-        $contactus_data->phone_1 = '281 1st Avenue, New York';
+        $contactus_daFta->phone_1 = '281 1st Avenue, New York';
         $contactus_data->phone_2 = '281 1st Avenue, New York';
         $contactus_data->email = '281 1st Avenue, New York';
         $contactus_data->facebook_link = 'www.facebook.com';

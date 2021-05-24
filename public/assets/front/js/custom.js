@@ -1811,14 +1811,14 @@
 				setColumnWidth();
 				container.isotope('reLayout');
 			}						
-			container.imagesLoaded(function () { 
+			/* container.imagesLoaded(function () { 
 				setColumnWidth();								
 				container.isotope( { 
 					itemSelector : '.mix', 
 					layoutMode : 'masonry', 
 					resizable : false 
 				} );
-			} );													
+			} );	 */												
 			$(window).on('debouncedresize', function () { 
 				reArrangeProjects();				
 			} );					

@@ -32,6 +32,8 @@ Route::group([
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/products/{slug}', 'ProductController@show')->name('product');
     Route::post('/subscribers', 'SubscriberController@store')->name('subscribers.store');
+    Route::get('/contact-us', 'ContactUsController@open')->name('contact-us');
+    Route::post('/contact-us', 'ContactUsController@store')->name('contact-us.store');
 });
 
 

@@ -35,7 +35,7 @@
                     <a href="careers.html" class="link link-gray size-18 mb-1 animsition-link"
                         data-hover="Careers">Careers</a>
                     <div class="clearfix w-100"></div>
-                    <a href="contact-3.html" class="link link-gray size-18 animsition-link"
+                    <a href="{{ route('contact-us') }}" class="link link-gray size-18 animsition-link"
                         data-hover="Contact Us">Contact Us</a>
                 </div>
                 <div class="col-md-5 col-lg-4 text-center text-md-left">
