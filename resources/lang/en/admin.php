@@ -64,4 +64,14 @@ return [
     'twitter_link' => 'Twitter Link',
     'linkedintwitter_link' => 'Linkedin Link',
 
+    ////// About Us ///////
+    'aboutus' => 'About Us',
+    'ourmission' => 'Our mission',
+    'why_choose_us' => 'Why Choose Us',
+    'what_we_do' => 'What We Do',
+    'main_section_title' => 'Main Section Title',
+    'main_section_description' => 'Main Section Description',
+    'number_of_users' => 'Number of Users',
+    'number_of_projects' => 'Number of Projects',
+    'number_of_awards' => 'Number of Awards',
 ];

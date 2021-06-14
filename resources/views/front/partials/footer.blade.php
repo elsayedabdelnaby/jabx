@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-md-3 col-lg-3 mb-5 mb-md-0 text-center text-md-left">
                     <h5 class="mb-4 color-white">Company</h5>
-                    <a href="about-us-creative.html" class="link link-gray size-18 mb-1 animsition-link"
+                    <a href="{{ route('aboutus') }}" class="link link-gray size-18 mb-1 animsition-link"
                         data-hover="About Us">About Us</a>
                     <div class="clearfix w-100"></div>
                     <a href="services-creative.html" class="link link-gray size-18 mb-1 animsition-link"

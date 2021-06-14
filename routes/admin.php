@@ -17,6 +17,8 @@ Route::group([
         Route::resource('/roles', 'RoleController')->name('', 'roles');
         Route::get('/sitesettings/{id}', 'SiteSettingsController@edit')->name('sitesettings.edit');
         Route::put('/sitesettings/{id}', 'SiteSettingsController@update')->name('sitesettings.update');
+        Route::get('/aboutus/{id}', 'AboutUsController@edit')->name('aboutus.edit');
+        Route::put('/aboutus/{id}', 'AboutUsController@update')->name('aboutus.update');
         Route::resource('sponsors', 'SponsorController')->name('', 'sponsors');
         Route::resource('sliders', 'SliderController')->name('', 'sliders');
         Route::get('/contactusdata/{id}', 'ContactUsDataController@edit')->name('contactusdata.edit');

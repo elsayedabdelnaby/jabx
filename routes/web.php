@@ -34,6 +34,7 @@ Route::group([
     Route::post('/subscribers', 'SubscriberController@store')->name('subscribers.store');
     Route::get('/contact-us', 'ContactUsController@open')->name('contact-us');
     Route::post('/contact-us', 'ContactUsController@store')->name('contact-us.store');
+    Route::get('/aboutus', 'AboutUsController@index')->name('aboutus');
 });
 
 

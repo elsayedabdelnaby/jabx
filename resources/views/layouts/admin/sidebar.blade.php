@@ -27,50 +27,6 @@
                 </li>
                 <li class="menu-item  menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
-                        <i class="menu-icon flaticon2-telegram-logo"></i>
-                        <span class="menu-text">Actions</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="menu-submenu ">
-                        <i class="menu-arrow"></i>
-                        <ul class="menu-subnav">
-                            <li class="menu-item  menu-item-parent" aria-haspopup="true">
-                                <span class="menu-link">
-                                    <span class="menu-text">Actions</span>
-                                </span>
-                            </li>
-                            <li class="menu-item " aria-haspopup="true">
-                                <a href="#" class="menu-link ">
-                                    <i class="menu-bullet menu-bullet-line">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">Reports</span>
-                                </a>
-                            </li>
-                            <li class="menu-item " aria-haspopup="true">
-                                <a href="#" class="menu-link ">
-                                    <i class="menu-bullet menu-bullet-line">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">Messages</span>
-                                </a>
-                            </li>
-                            <li class="menu-item " aria-haspopup="true">
-                                <a href="#" class="menu-link ">
-                                    <i class="menu-bullet menu-bullet-line"><span></span></i>
-                                    <span class="menu-text">Notes</span>
-                                </a>
-                            </li>
-                            <li class="menu-item " aria-haspopup="true"><a href="#" class="menu-link ">
-                                    <i class="menu-bullet menu-bullet-line"><span></span></i>
-                                    <span class="menu-text">Remarks</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="menu-item  menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                    <a href="javascript:;" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon2-laptop"></i>
                         <span class="menu-text">Modules</span>
                         <i class="menu-arrow"></i>
@@ -109,57 +65,6 @@
                                     <span class="menu-text">Subscribers</span>
                                 </a>
                             </li>
-                            <li class="menu-item " aria-haspopup="true">
-                                <a href="#" class="menu-link ">
-                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                    <span class="menu-text">Events</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="menu-item  menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                    <a href="javascript:;" class="menu-link menu-toggle">
-                        <i class="menu-icon flaticon2-browser-2"></i>
-                        <span class="menu-text">Reports</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="menu-submenu ">
-                        <i class="menu-arrow">
-                        </i>
-                        <ul class="menu-subnav">
-                            <li class="menu-item  menu-item-parent" aria-haspopup="true">
-                                <span class="menu-link">
-                                    <span class="menu-text">Reports</span>
-                                </span>
-                            </li>
-                            <li class="menu-item " aria-haspopup="true">
-                                <a href="#" class="menu-link ">
-                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                    <span class="menu-text">Cases</span>
-                                </a>
-                            </li>
-                            <li class="menu-item " aria-haspopup="true">
-                                <a href="#" class="menu-link ">
-                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                    <span class="menu-text">Messages</span>
-                                </a>
-                            </li>
-                            <li class="menu-item " aria-haspopup="true">
-                                <a href="#" class="menu-link ">
-                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                    <span class="menu-text">Reports</span>
-                                </a>
-                            </li>
-                            <li class="menu-item " aria-haspopup="true">
-                                <a href="#" class="menu-link ">
-                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                                    <span class="menu-text">Calendar</span>
-                                </a>
-                            </li>
-                            <li class="menu-item " aria-haspopup="true"><a href="#" class="menu-link "><i
-                                        class="menu-bullet menu-bullet-dot"><span></span></i><span
-                                        class="menu-text">FAQ</span></a></li>
                         </ul>
                     </div>
                 </li>
@@ -192,6 +97,12 @@
                                 </a>
                             </li>
                             <li class="menu-item " aria-haspopup="true">
+                                <a href="{{ route('admin.aboutus.edit', 1) }}" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                    <span class="menu-text">@lang( 'admin.aboutus' )</span>
+                                </a>
+                            </li>
+                            <li class="menu-item " aria-haspopup="true">
                                 <a href="{{ route('admin.contactusdata.edit', 1) }}" class="menu-link ">
                                     <i class="menu-bullet menu-bullet-dot"><span></span></i>
                                     <span class="menu-text">@lang( 'admin.contactus_data' )</span>
@@ -199,11 +110,6 @@
                             </li>
                         </ul>
                     </div>
-                </li>
-                <li class="menu-item " aria-haspopup="true">
-                    <a href="#" class="menu-link ">
-                        <i class="menu-icon flaticon2-graph-1"></i><span class="menu-text">Logs</span>
-                    </a>
                 </li>
             </ul>
             <!--end::Menu Nav-->

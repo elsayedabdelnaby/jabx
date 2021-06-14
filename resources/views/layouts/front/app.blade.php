@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('assets/front/css/tooltip.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/front/css/swiper.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}" />
-
+    @yield('css')
     <!-- Favicons
  ================================================== -->
     <link rel="icon" type="image/png" href="{{ $site_settings->getFaviconPathAttribute() }}">

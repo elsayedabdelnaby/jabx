@@ -163,7 +163,7 @@
                                     <div class="swiper-slide" data-swiper-slide-index="{{ asset($sponsor->id) }}"
                                         style="width: 318.25px;">
                                         <div class="section logos-wrap-1 text-center margin-auto">
-                                            <img src="{{ asset($sponsor->logo_path) }}" alt="">
+                                            <img src="{{ asset($sponsor->logo_path) }}" alt="{{ $sponsor->name }}">
                                         </div>
                                     </div>
                                 @endforeach
