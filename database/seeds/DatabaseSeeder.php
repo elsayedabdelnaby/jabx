@@ -20,7 +20,9 @@ class DatabaseSeeder extends Seeder
             ContactUsDataSeeder::class,
             ProductSeeder::class,
             SiteSettingsSeeder::class,
-            SliderSeeder::class
+            SliderSeeder::class,
+            AboutUsSeeder::class,
+            ContactUsDataSeeder::class,
         ]);
     }
 }

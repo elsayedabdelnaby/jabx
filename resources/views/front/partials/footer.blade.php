@@ -32,19 +32,15 @@
                     <a href="team.html" class="link link-gray size-18 mb-1 animsition-link"
                         data-hover="Team Members">Team Members</a>
                     <div class="clearfix w-100"></div>
-                    <a href="careers.html" class="link link-gray size-18 mb-1 animsition-link"
-                        data-hover="Careers">Careers</a>
                     <div class="clearfix w-100"></div>
                     <a href="{{ route('contact-us') }}" class="link link-gray size-18 animsition-link"
                         data-hover="Contact Us">Contact Us</a>
                 </div>
                 <div class="col-md-5 col-lg-4 text-center text-md-left">
                     <h5 class="mb-4 color-white">Contact</h5>
-                    <a href="" class="link link-gray size-18 mb-1" data-hover="+33(0)1 43 65 79 19">+33(0)1 43 65 79
-                        19</a>
+                    <a href="tel:{{ $contact_us_data->phone_1 }}" class="link link-gray size-18 mb-1" data-hover="{{ $contact_us_data->phone_1 }}">{{ $contact_us_data->phone_1 }}</a>
                     <div class="clearfix w-100"></div>
-                    <a href="" class="link link-gray size-18 mb-1" data-hover="+38(0)6 34 62 54 77">+38(0)6 34 62 54
-                        77</a>
+                    <a href="" class="link link-gray size-18 mb-1" data-hover="{{ $contact_us_data->phone_2 }}">{{ $contact_us_data->phone_2 }}</a>
                     <div class="clearfix w-100"></div>
                     <a href="" class="link size-18 link-primary"
                         data-hover="{{ $contact_us_data->email }}">{{ $contact_us_data->email }}</a>
