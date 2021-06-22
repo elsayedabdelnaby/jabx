@@ -25,5 +25,9 @@ Route::group([
         Route::put('/contactusdata/{id}', 'ContactUsDataController@update')->name('contactusdata.update');
         Route::resource('products', 'ProductController')->name('', 'products');
         Route::resource('subscribers', 'SubscriberController')->name('', 'subscribers');
+        Route::resource('contactus-messages', 'ContactUsMessageController')->name('', 'contactus.messages');
+        Route::get('contactus-messages', 'ContactUsMessageController@index')->name('contactus-messages.index');
+        Route::get('contactus-messages/{id}/edit', 'ContactUsMessageController@edit')->name('contactus-messages.edit');
+        Route::put('contactus-messages/{id}', 'ContactUsMessageController@update')->name('contactus-messages.update');
     });
 });

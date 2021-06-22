@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Repositories\AdminUserRepositoryInterface;
+use App\Repositories\ContactUsMessageRepositoryInterface;
 use App\Repositories\Eloquent\AdminUserRepository;
 use App\Repositories\Eloquent\BaseRepository;
+use App\Repositories\Eloquent\ContactUsMessageRepository;
 use App\Repositories\Eloquent\ProductRepository;
 use App\Repositories\Eloquent\SliderRepository;
 use App\Repositories\Eloquent\SponsorRepository;
@@ -41,5 +43,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(SliderRepositoryInterface::class, SliderRepository::class);
         $this->app->bind(ProductRepositoryInterface::class, ProductRepository::class);
         $this->app->bind(SubscriberRepositoryInterface::class, SubscriberRepository::class);
+        $this->app->bind(ContactUsMessageRepositoryInterface::class, ContactUsMessageRepository::class);
     }
 }
