@@ -31,8 +31,8 @@
 
         <!--begin::Card body-->
         <div class="card-body px-0">
-            <form class="form" method="POST" action="{{ route('admin.team-members.store') }}" id="product_create_form"
-                enctype="multipart/form-data">
+            <form class="form" method="POST" action="{{ route('admin.team-members.store') }}" 
+            enctype="multipart/form-data" id="team_member_form">
                 @csrf
                 @method('post')
                 <div class="card-body">
@@ -61,11 +61,11 @@
                                 @enderror
                             </div>
                             <div class="col-lg-4">
-                                <label>* @lang('admin.breif'):</label>
-                                <input type="text" name="breif" class="form-control"
-                                    placeholder="Enter breif"
-                                    value="{{ old('breif') }}" />
-                                @error('breif')
+                                <label>* @lang('admin.brief'):</label>
+                                <input type="text" name="brief" class="form-control"
+                                    placeholder="Enter Brief"
+                                    value="{{ old('brief') }}" />
+                                @error('brief')
                                     <div class="fv-plugins-message-container">
                                         <div class="fv-help-block">
                                             {{ $message }}</div>
@@ -118,7 +118,6 @@
                                     </div>
                                 @enderror
                             </div>
-                            
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6">
@@ -162,14 +161,5 @@
 
 
 @section('script')
-    <!--begin::Page Scripts(used by this page)-->
-    <!--begin::Page Vendors(used by this page)-->
-    <script src="{{ asset('assets/admin/js/pages/custom/ckeditor/ckeditor-classic.bundle.js') }}"></script>
-    <!--end::Page Vendors-->
-
-    <!--begin::Page Scripts(used by this page)-->
-    <script src="{{ asset('assets/admin/js/pages/crud/forms/editors/ckeditor-classic.js') }}"></script>
-    <!--end::Page Scripts-->
-    <script src="{{ asset('assets/admin/js/pages/custom/products/edit.js') }} "></script>
-    <!--end::Page Scripts-->
+    <script src="{{ asset('assets/admin/js/pages/custom/team_members/edit.js') }} "></script>
 @endsection

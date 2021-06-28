@@ -26,12 +26,8 @@
                     <a href="{{ route('aboutus') }}" class="link link-gray size-18 mb-1 animsition-link"
                         data-hover="About Us">About Us</a>
                     <div class="clearfix w-100"></div>
-                    <a href="services-creative.html" class="link link-gray size-18 mb-1 animsition-link"
-                        data-hover="Our Services">Our Services</a>
-                    <div class="clearfix w-100"></div>
-                    <a href="team.html" class="link link-gray size-18 mb-1 animsition-link"
+                    <a href="{{ route('team-members') }}" class="link link-gray size-18 mb-1 animsition-link"
                         data-hover="Team Members">Team Members</a>
-                    <div class="clearfix w-100"></div>
                     <div class="clearfix w-100"></div>
                     <a href="{{ route('contact-us') }}" class="link link-gray size-18 animsition-link"
                         data-hover="Contact Us">Contact Us</a>

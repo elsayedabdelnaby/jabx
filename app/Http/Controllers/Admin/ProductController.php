@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Repositories\ProductRepositoryInterface;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
+use File;
 
 class ProductController extends Controller
 {

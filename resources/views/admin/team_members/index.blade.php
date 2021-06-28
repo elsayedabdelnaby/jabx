@@ -1,11 +1,11 @@
 @extends('layouts.admin.app')
 
 @section('title')
-    Admin-Prodcuts
+    Admin-Team Members
 @endsection
 
 @section('subheader')
-    @include('admin.products.subheader')
+    @include('admin.team_members.subheader')
     <div class="d-flex flex-column-fluid">
         <!--begin::Container-->
         <div class=" container ">
@@ -33,7 +33,7 @@
             <div class="card-title">
                 <h3 class="card-label">
                     @lang( 'admin.admin_panel' ) - @lang( 'admin.' . $module )
-                    <span class="text-muted pt-2 font-size-sm d-block">@lang( 'admin.products_management' ) made easy</span>
+                    <span class="text-muted pt-2 font-size-sm d-block">@lang( 'admin.team_members' ) made easy</span>
                 </h3>
             </div>
             <div class="card-toolbar">
@@ -66,7 +66,7 @@
                 <!--end::Dropdown-->
 
                 <!--begin::Button-->
-                <a href="{{ route('admin.products.create') }}" class="btn btn-primary font-weight-bolder">
+                <a href="{{ route('admin.team-members.create') }}" class="btn btn-primary font-weight-bolder">
                     <span class="svg-icon svg-icon-md">
                         <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg--><svg
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -99,26 +99,6 @@
                                     <span><i class="flaticon2-search-1 text-muted"></i></span>
                                 </div>
                             </div>
-                            <div class="col-md-4 my-2 my-md-0">
-                                <div class="d-flex align-items-center">
-                                    <label class="mr-3 mb-0 d-none d-md-block">@lang( 'admin.publish' ):</label>
-                                    <select class="form-control" id="kt_datatable_search_is_pubish">
-                                        <option value=""> @lang( 'admin.all' ) </option>
-                                        <option value="1"> @lang( 'admin.publish' ) </option>
-                                        <option value="2"> @lang( 'admin.not_publish' ) </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-4 my-2 my-md-0">
-                                <div class="d-flex align-items-center">
-                                    <label class="mr-3 mb-0 d-none d-md-block">@lang( 'admin.show_in_header' ):</label>
-                                    <select class="form-control" id="kt_datatable_search_in_header">
-                                        <option value=""> @lang( 'admin.all' ) </option>
-                                        <option value="yes"> @lang( 'admin.yes' ) </option>
-                                        <option value="no"> @lang( 'admin.no' ) </option>
-                                    </select>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-xl-4 mt-5 mt-lg-0">
@@ -143,8 +123,7 @@
 
 @section('script')
     <script>
-        var dataJSONArray = {!! json_encode($products) !!};
-
+        var dataJSONArray = {!! json_encode($team_members) !!};
     </script>
-    <script src="{{ asset('assets/admin/js/data-rendering/admin-products.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/data-rendering/admin-team-members.js') }}"></script>
 @endsection

@@ -11,11 +11,13 @@ use App\Repositories\Eloquent\ProductRepository;
 use App\Repositories\Eloquent\SliderRepository;
 use App\Repositories\Eloquent\SponsorRepository;
 use App\Repositories\Eloquent\SubscriberRepository;
+use App\Repositories\Eloquent\TeamMemberRepository;
 use App\Repositories\EloquentRepositoryInterface;
 use App\Repositories\ProductRepositoryInterface;
 use App\Repositories\SliderRepositoryInterface;
 use App\Repositories\SponsorRepositoryInterface;
 use App\Repositories\SubscriberRepositoryInterface;
+use App\Repositories\TeamMemberRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -44,5 +46,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(ProductRepositoryInterface::class, ProductRepository::class);
         $this->app->bind(SubscriberRepositoryInterface::class, SubscriberRepository::class);
         $this->app->bind(ContactUsMessageRepositoryInterface::class, ContactUsMessageRepository::class);
+        $this->app->bind(TeamMemberRepositoryInterface::class, TeamMemberRepository::class);
     }
 }

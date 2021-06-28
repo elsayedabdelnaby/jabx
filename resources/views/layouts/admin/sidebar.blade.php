@@ -71,6 +71,12 @@
                                     <span class="menu-text">Subscribers</span>
                                 </a>
                             </li>
+                            <li class="menu-item " aria-haspopup="true">
+                                <a href="{{ route('admin.team-members.index') }}" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                                    <span class="menu-text">Team Members</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>

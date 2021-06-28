@@ -1,11 +1,11 @@
 @extends('layouts.admin.app')
 
 @section('title')
-    Admin-Products Edit
+    Admin-Team Member Edit
 @endsection
 
 @section('subheader')
-    @include('admin.products.subheader')
+    @include('admin.team_members.subheader')
 
     <div class="d-flex flex-column-fluid">
         <!--begin::Container-->
@@ -33,9 +33,9 @@
 
         <!--begin::Card body-->
         <div class="card-body px-0">
-            <form class="form" method="POST" action="{{ route('admin.products.update', $product) }}"
-                id="product_create_form" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="{{ $product->id }}">
+            <form class="form" method="POST" action="{{ route('admin.team-members.update', $team_member) }}"
+                id="team_member_form" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{{ $team_member->id }}">
                 @csrf
                 @method('put')
                 <div class="card-body">
@@ -43,8 +43,8 @@
                         <div class="form-group row">
                             <div class="col-lg-6">
                                 <label>* @lang('admin.name'):</label>
-                                <input type="text" name="name" class="form-control" placeholder="Enter name of product"
-                                    value="{{ $product->name }}" />
+                                <input type="text" name="name" class="form-control" placeholder="Name of Team Member"
+                                    value="{{ $team_member->name }}" />
                                 @error('name')
                                     <div class="fv-plugins-message-container">
                                         <div class="fv-help-block">
@@ -52,76 +52,23 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="col-lg-3">
-                                <label>@lang('admin.is_publish'):</label>
-                                <input type="checkbox" name="is_publish" class="form-control" @if ($product->is_publish) == 'on') checked @endif />
-                            </div>
-                            <div class="col-lg-3">
-                                <label>@lang('admin.display_in_header'):</label>
-                                <input type="checkbox" name="display_in_header" class="form-control" @if ($product->display_in_header) == 'on') checked @endif />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label>* @lang('admin.short_description'):</label>
-                                <input type="text" name="short_description" class="form-control"
-                                    placeholder="Enter short description of product"
-                                    value="{{ $product->short_description }}" />
-                                @error('short_description')
+                            <div class="col-lg-4">
+                                <label>* @lang('admin.title'):</label>
+                                <input type="text" name="title" class="form-control" placeholder="Enter title"
+                                    value="{{ $team_member->title }}" />
+                                @error('title')
                                     <div class="fv-plugins-message-container">
                                         <div class="fv-help-block">
                                             {{ $message }}</div>
                                     </div>
                                 @enderror
                             </div>
-                            <div class="col-lg-6">
-                                <label>* @lang('admin.slug'):</label>
-                                <input type="text" name="slug" class="form-control" placeholder="Enter slug of product"
-                                    value=" {{ $product->slug }}" />
-                                @error('slug')
-                                    <div class="fv-plugins-message-container">
-                                        <div class="fv-help-block">
-                                            {{ $message }}</div>
-                                    </div>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-12">
-                                <label>* @lang('admin.description'):</label>
-                                <div class="card card-custom">
-                                    <div class="card-body">
-                                        <textarea name="description" id="kt-ckeditor-product-description">
-                                                            {{ $product->description }}
-                                                        </textarea>
-                                        @error('description')
-                                            <div class="fv-plugins-message-container">
-                                                <div class="fv-help-block">
-                                                    {{ $message }}</div>
-                                            </div>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label>* @lang('admin.meta_title'):</label>
-                                <input type="text" name="meta_title" class="form-control"
-                                    placeholder="Enter meta title of product" value="{{ $product->meta_title }}" />
-                                @error('meta_title')
-                                    <div class="fv-plugins-message-container">
-                                        <div class="fv-help-block">
-                                            {{ $message }}</div>
-                                    </div>
-                                @enderror
-                            </div>
-                            <div class="col-lg-6">
-                                <label>* @lang('admin.meta_description'):</label>
-                                <input type="text" name="meta_description" class="form-control"
-                                    placeholder="Enter meta description of product"
-                                    value="{{ $product->meta_description }}" />
-                                @error('meta_description')
+                            <div class="col-lg-4">
+                                <label>* @lang('admin.brief'):</label>
+                                <input type="text" name="brief" class="form-control"
+                                    placeholder="Enter Brief"
+                                    value="{{ $team_member->breif }}" />
+                                @error('brief')
                                     <div class="fv-plugins-message-container">
                                         <div class="fv-help-block">
                                             {{ $message }}</div>
@@ -131,10 +78,10 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6">
-                                <label>* @lang('admin.meta_keywords'):</label>
-                                <input type="text" name="meta_keywords" class="form-control"
-                                    placeholder="Enter meta keywords of product" value="{{ $product->meta_keywords }}" />
-                                @error('meta_keywords')
+                                <label>* @lang('admin.instagram'):</label>
+                                <input type="text" name="instagram_link" class="form-control"
+                                    placeholder="Enter Instagram Link" value="{{ $team_member->instagram_link }}" />
+                                @error('instagram_link')
                                     <div class="fv-plugins-message-container">
                                         <div class="fv-help-block">
                                             {{ $message }}</div>
@@ -142,9 +89,37 @@
                                 @enderror
                             </div>
                             <div class="col-lg-6">
-                                <label>* @lang('admin.sort'):</label>
-                                <input type="number" min="1" name="sort" class="form-control"
-                                    placeholder="Enter sort of product" value="{{ $product->sort }}" />
+                                <label>* @lang('admin.facebook'):</label>
+                                <input type="text" name="facebook_link" class="form-control"
+                                    placeholder="Enter Facebook Link" value="{{ $team_member->facebook_link }}" />
+                                @error('facebook_link')
+                                    <div class="fv-plugins-message-container">
+                                        <div class="fv-help-block">
+                                            {{ $message }}</div>
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="col-lg-6">
+                                <label>* @lang('admin.twitter'):</label>
+                                <input type="text" name="twitter_link" class="form-control"
+                                    placeholder="Enter Twitter Link" value="{{ $team_member->twitter_link }}" />
+                                @error('twitter_link')
+                                    <div class="fv-plugins-message-container">
+                                        <div class="fv-help-block">
+                                            {{ $message }}</div>
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="col-lg-6">
+                                <label>* @lang('admin.linkedin'):</label>
+                                <input type="text" name="linkedin_link" class="form-control"
+                                    placeholder="Enter LinkedIn Link" value="{{ $team_member->linkedin_link }}" />
+                                @error('linkedin_link')
+                                    <div class="fv-plugins-message-container">
+                                        <div class="fv-help-block">
+                                            {{ $message }}</div>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
@@ -152,7 +127,7 @@
                             <div class="col-lg-6">
                                 <div class="image-input image-input-outline" id="image">
                                     <div class="image-input-wrapper"
-                                        style="background-image: url('{{ asset($product->getImagePathAttribute()) }}')">
+                                        style="background-image: url('{{ asset($team_member->getImagePathAttribute()) }}')">
                                     </div>
 
                                     <label
@@ -160,7 +135,7 @@
                                         data-action="change" data-toggle="tooltip" title=""
                                         data-original-title="Change image">
                                         <i class="fa fa-pen icon-sm text-muted"></i>
-                                        <input type="file" name="product_image" accept=".png, .jpg, .jpeg" />
+                                        <input type="file" name="team_member_image" accept=".png, .jpg, .jpeg" />
                                         <input type="hidden" name="image_remove" />
                                     </label>
 
@@ -193,14 +168,6 @@
 
 @section('script')
     <!--begin::Page Scripts(used by this page)-->
-    <!--begin::Page Vendors(used by this page)-->
-    <script src="{{ asset('assets/admin/js/pages/custom/ckeditor/ckeditor-classic.bundle.js') }}"></script>
-    <!--end::Page Vendors-->
-
-    <!--begin::Page Scripts(used by this page)-->
-    <script src="{{ asset('assets/admin/js/pages/crud/forms/editors/ckeditor-classic.js') }}"></script>
-    <!--end::Page Scripts-->
-    <!--begin::Page Scripts(used by this page)-->
-    <script src="{{ asset('assets/admin/js/pages/custom/products/edit.js') }} "></script>
+    <script src="{{ asset('assets/admin/js/pages/custom/team_members/edit.js') }} "></script>
     <!--end::Page Scripts-->
 @endsection
