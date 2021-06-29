@@ -54,11 +54,11 @@
                             </div>
                             <div class="col-lg-3">
                                 <label>@lang('admin.is_publish'):</label>
-                                <input type="checkbox" name="is_publish" class="form-control" @if ($product->is_publish) == 'on') checked @endif />
+                                <input type="checkbox" name="is_publish" class="form-control" @if ($product->is_publish == 1) checked @endif />
                             </div>
                             <div class="col-lg-3">
                                 <label>@lang('admin.display_in_header'):</label>
-                                <input type="checkbox" name="display_in_header" class="form-control" @if ($product->display_in_header) == 'on') checked @endif />
+                                <input type="checkbox" name="display_in_header" class="form-control" @if ($product->display_in_header == 'yes') checked @endif />
                             </div>
                         </div>
                         <div class="form-group row">

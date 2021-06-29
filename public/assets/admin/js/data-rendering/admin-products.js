@@ -137,7 +137,7 @@ function deleteProduct(id) {
     var host = window.location.protocol + "//" + window.location.host;
     $.ajax({
         type: "DELETE",
-        url: host + "/admin/producst/" + id,
+        url: host + "/admin/products/" + id,
         data: {
             _method: 'DELETE',
             "id": id
