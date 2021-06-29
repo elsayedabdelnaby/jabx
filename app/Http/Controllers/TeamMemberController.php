@@ -15,7 +15,7 @@ class TeamMemberController extends Controller
     public function index()
     {
         $team_members = TeamMember::all();
-        return view('front.team_members', $team_members);
+        return view('front.team_members', compact('team_members'));
     }
 
     /**
